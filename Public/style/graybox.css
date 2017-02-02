@@ -1,0 +1,170 @@
+@charset "utf-8";
+/*	==================================================================
+		Graybox
+	==================================================================*/
+.graybox {
+	margin-left: 10px;
+	_margin-left: 5px;
+	margin-top: 10px;
+	padding: 0;
+	float: left;
+}
+.graybox .left_border {
+	float: left;
+	width: 18px;
+	height: 180px;
+	background-image: url(../images/graybox_left.jpg);
+	background-repeat: no-repeat;
+}
+.graybox .middle {
+	float: left;
+	padding-top: 12px;
+	background-image: url(../images/graybox_back.jpg);
+	background-repeat: repeat-x;
+}
+
+.graybox .right_border {
+	float: left;
+	width: 18px;
+	height: 180px;
+	background-image: url(../images/graybox_right.jpg);
+	background-repeat: no-repeat;
+}
+
+.graybox .nav {
+	padding: 0 20px;
+	list-style: none;
+	text-align: center;
+	font: "微软雅黑", "华文细黑", "幼圆", "宋体";
+	font-size: 16px;
+}
+.graybox .nav img {
+	float: left;
+	vertical-align: middle;
+	margin-right: 5px;
+	margin-top: 3px;
+}
+.graybox .nav li{
+	float: left;
+	line-height: 30px;
+}
+.graybox .nav a {
+	display: block;
+	width: 100px;
+	height: 30px;
+	background: none;
+	color: #666666;
+}
+.graybox .nav .chosen{
+	width: 98px;
+	background: url(../images/graybox_nav.jpg);
+	background-repeat: repeat-x;
+	border-left: #e9e9e9 1px solid;
+	border-right: #e9e9e9 1px solid;
+	color: #0095ff;
+}
+
+.graybox .title, .graybox_mini .title, .graybox .subtitle {
+	padding-left: 20px;
+	list-style: none;
+	height: 30px;
+	line-height: 30px;
+	font: "微软雅黑", "华文细黑", "幼圆", "宋体";
+	color: #666;
+}
+
+.graybox .title, .graybox_mini .title {
+	font-size: 16px;
+}
+
+.graybox .title img, .graybox_mini .title img {
+	padding-right: 10px;
+	vertical-align: middle;
+}
+
+.graybox .subtitle {
+	font-size: 14px;
+	border-bottom: 1px solid #CCC;
+}
+
+.graybox .subtitle img {
+	padding-right: 3px;
+	vertical-align: middle;
+}
+.graybox .content {
+	clear: both;
+}
+
+.graybox .title .color1 {color: #0095ff;}
+
+/*	==================================================================
+		End Graybox
+	==================================================================*/
+/*	==================================================================
+		Graybox_mini
+	==================================================================*/
+.graybox_mini {
+	margin: 10px;
+	_margin: 5px;
+	float: left;
+}
+.graybox_mini .left_border {
+	float: left;
+	width: 25px;
+	height: 150px;
+	background-image: url(../images/graybox_mini_left.jpg);
+	background-repeat: no-repeat;
+}
+.graybox_mini .middle {
+	float: left;
+	width: 266px;
+	height: 135px;
+	padding-top: 15px;
+	background-image: url(../images/graybox_mini_back.jpg);
+	background-repeat: repeat-x;
+	line-height: 20px;
+}
+
+.graybox_mini .right_border {
+	float: left;
+	width: 25px;
+	height: 150px;
+	background-image: url(../images/graybox_mini_right.jpg);
+	background-repeat: no-repeat;
+}
+
+.graybox_mini .content {
+	padding: 5px;
+}
+/*	==================================================================
+		End Graybox_mini
+	==================================================================*/
+
+/*	==================================================================
+		List
+	==================================================================*/
+.graybox .list {
+	float: left;
+	list-style: none;
+	margin: 10px;
+	_margin: 5px;
+}
+.graybox .list li {
+	overflow: hidden;
+	border-bottom: #bfbfbf 1px dashed;
+	height: 20px;
+	line-height: 20px;
+	padding:0 5px;
+}
+.graybox .list li a {float:left;} /* For Fucking IE */
+.graybox .list .set_top {
+	padding-right: 5px;
+	color: #c70000;
+}
+.graybox .list .time {
+	float: right;
+	color: #666666;
+}
+/*	==================================================================
+		End List
+	==================================================================*/

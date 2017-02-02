@@ -1,0 +1,865 @@
+@charset "utf-8";
+/*	==================================================================
+		Common
+	==================================================================*/
+body {
+	font: 12px "微软雅黑", "宋体";
+	background: #eaeaea;
+	background:url(../images/back.jpg);
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+/* ~~ 元素/标签选择器 ~~ */
+ul, ol, dl { /* 由于浏览器之间的差异，最佳做法是在列表中将填充和边距都设置为零。为了保持一致，您可以在此处指定需要的数值，也可以在列表所包含的列表项（LI、DT 和 DD）中指定需要的数值。请注意，除非编写一个更为具体的选择器，否则您在此处进行的设置将会层叠到 .nav 列表。 */
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* 删除上边距可以解决边距会超出其包含的 div 的问题。剩余的下边距可以使 div 与后面的任何元素保持一定距离。 */
+	padding-right: 10px;
+	padding-left: 10px; /* 向 div 内的元素侧边（而不是 div 自身）添加填充可避免使用任何方框模型数学。此外，也可将具有侧边填充的嵌套 div 用作替代方法。 */
+}
+h3, h4, h5, h6 {
+	text-align: center;
+	margin-top: 0;	 /* 删除上边距可以解决边距会超出其包含的 div 的问题。剩余的下边距可以使 div 与后面的任何元素保持一定距离。 */
+	padding-right: 10px;
+	padding-left: 10px; /* 向 div 内的元素侧边（而不是 div 自身）添加填充可避免使用任何方框模型数学。此外，也可将具有侧边填充的嵌套 div 用作替代方法。 */
+	margin-bottom: 10px;
+}
+img {margin: 0;padding: 0;}
+a img { /* 此选择器将删除某些浏览器中显示在图像周围的默认蓝色边框（当该图像包含在链接中时） */
+	border: none;
+}
+/* ~~ 站点链接的样式必须保持此顺序，包括用于创建悬停效果的选择器组在内。 ~~ */
+a:link {
+	color: #000;
+	text-decoration: none; /* 除非将链接设置成极为独特的外观样式，否则最好提供下划线，以便可从视觉上快速识别 */
+}
+a:visited {
+	color: #000;
+	text-decoration: none;
+}
+a:hover, a:active, a:focus { /* 此组选择器将为键盘导航者提供与鼠标使用者相同的悬停体验。 */
+	color: #ff8a00;
+	text-decoration: none;
+}
+/*	==================================================================
+		End Common
+	==================================================================*/
+/*	==================================================================
+		Top
+	==================================================================*/
+#container {
+}
+
+	/* Subnav */
+	#subnav {
+		list-style: none;
+		background: #488fce;
+		height: 30px;
+		color: white;
+	}
+	#subnav a {
+		color: #fff;
+	}
+	#subnav a:hover {
+		color: #E7E7E7;
+	}
+	
+		#subnav_content {
+			width: 960px;
+			margin: 0 auto;
+		}
+		
+			#subnav li {
+				float: left;
+				display: block;
+				margin: 6px 0;
+				padding: 0 12px;
+				height: 18px;
+				text-align: center;
+				line-height: 18px;
+			}
+			#subnav li + li {
+				border-left: white 1px solid;
+			}
+
+			#register {
+				float: right;
+				height: 20px;
+				line-height: 30px;
+				margin-right: 10px;
+			}
+			
+				.icon_xl {
+					display: inline-block;
+					background: url(../images/share_icons.png) no-repeat;
+					width: 16px;
+					height: 16px;
+					margin: 7px 2px;
+					float: left;
+				}
+				.icon_rr {
+					display: inline-block;
+					background: url(../images/share_icons.png) no-repeat 0 -17px;
+					width: 16px;
+					height: 16px;
+					margin: 7px 2px;
+					margin-right: 20px;
+					float: left;
+				}
+
+	/* End Subnav */
+
+	#banner {
+		height: 90px;
+		background: url(../images/top_back.png);
+	}
+	
+		#banner_content {
+			width: 960px;
+			height: 90px;
+			margin: 0 auto;
+			position: relative;
+		}
+
+			#logo {
+				display: block;
+				background: url(../images/logo.png) no-repeat;
+				width: 260px;
+				height: 80px;
+				position: absolute;
+				left: 0;
+				/*top: 5px;*/
+				width:276px;
+				height:92px;
+				bottom:  -5px;
+				z-index:200;
+			}
+
+			/* Nav */
+			#mainnav {
+				position: absolute;
+				list-style: none;
+				width: 540px;
+				height: 40px;
+				background: url(../images/mainnav_back.png);
+				color: #ce2a2b;
+				left: 260px;
+				bottom: 0;
+				padding-left: 60px;
+				font-size: 14px;
+			}
+			#mainnav li {
+				float: left;
+				display: block;
+				margin: 14px 0;
+				padding: 0 8px;
+				height: 20px;
+				text-align: center;
+				line-height: 20px;
+			}
+			#mainnav li + li {
+				border-left: #e0e0e0 1px solid;
+			}
+			#mainnav li a {
+				color: white;
+			}
+			#mainnav li a:hover {
+				color: #E7E7E7;
+				text-decoration: underline;
+			}
+
+			#search {
+				position: absolute;
+				top: 12px;
+				right: 80px;
+			}
+				#search_txt {
+					padding-left: 5px;
+					width: 190px;
+					height: 24px;
+					line-height: 24px;
+					vertical-align: middle;
+					border: 1px solid #DDD;
+					border-right: 0;
+					-webkit-border-radius: 2px;
+					-moz-border-radius: 2px;
+					-o-border-radius: 2px;
+					border-radius: 2px;
+					-webkit-box-shadow: 1px 1px 1px #DDD inset;
+					-moz-box-shadow: 1px 1px 1px #ddd inset;
+					-o-box-shadow: 1px 1px 1px #ddd inset;
+					box-shadow: 1px 1px 1px #DDD inset;
+				}
+				#search_button {
+					width: 30px;
+					height: 26px;
+					vertical-align: middle;
+					text-indent: -9999px;
+					background: url(../images/search_button.png) no-repeat 6px 4px;
+					border: 1px solid #C2C2C2;
+					-webkit-border-radius: 3px;
+					-moz-border-radius: 3px;
+					-o-border-radius: 3px;
+					border-radius: 3px;
+					margin-left: -4px;
+					cursor: pointer;
+				}
+				#search_button:hover {
+					background: url(../images/search_button.png) no-repeat 6px -20px #ddd;
+				}
+			
+			#banner_qt {
+				background: url(../images/banner_qt.png);
+				width: 90px;
+				height: 62px;
+				position: absolute;
+				bottom: 0;
+				right: 0;
+			}
+			
+			#banner_plugin {
+				position: absolute;
+				left: 260px;
+				bottom: 32px;
+			}
+			/* End Nav */
+/*	==================================================================
+		End Top
+	==================================================================*/
+/*	==================================================================
+		Container
+	==================================================================*/
+/* ~~ 此固定宽度容器包含所有其它元素 ~~ */
+
+/* ~~ 这是布局信息。 ~~ 
+
+1) 填充只会放置于 div 的顶部和/或底部。此 div 中的元素侧边会有填充。这样，您可以避免使用任何“方框模型数学”。请注意，如果向 div 自身添加任何侧边填充或边框，这些侧边填充或边框将与您定义的宽度相加，得出 *总计* 宽度。您也可以选择删除 div 中的元素的填充，并在该元素中另外放置一个没有任何宽度但具有设计所需填充的 div。
+
+*/
+#content {
+	width: 960px;
+	background-color: #FFF;
+	margin:0 auto;
+	border-top: /*#2B93CE*/#aaa 3px solid;
+	z-index:1;
+}
+
+/*	==================================================================
+		Common
+	==================================================================*/
+
+/*国庆图片*/	
+#box{
+width:200px;
+float:left;
+margin-top:-130px;
+z-index:2;
+
+}
+
+.guoqing{
+width:200px;
+height:350px;
+z-index:3;
+
+}
+	
+	
+	
+	
+	
+	.icon {
+	margin-right: 5px;
+	float: left;
+}
+
+.vline {
+	margin: 10px;
+	_margin: 5px;
+	float:left;
+}
+/*	==================================================================
+		End Common
+	==================================================================*/
+/*	==================================================================
+		Knows
+	==================================================================*/
+#scrollMe {
+	float: left;
+	overflow: hidden;
+	height: 20px;
+	line-height: 20px;
+	width: 440px;
+}
+#scrollMe a {
+	text-decoration:underline;
+}
+
+#knows {
+	padding-top: 10px;
+	padding-left: 20px;
+}
+
+#knows .icon {
+	margin-top: 2px;
+}
+
+#knows span {
+	font-size: 14px;
+	float: left;
+}
+/*	==================================================================
+		End Knows
+	==================================================================*/
+/*	==================================================================
+		Video
+	==================================================================*/
+#videoRecommend {
+	float: left;
+}
+#videoRecommend img {
+	float: left;
+	width: 120px;
+	height: 160px;
+	margin:10px;
+	_margin:5px;
+	border: #DDD 4px solid;
+}
+#videoRecommend h3 {
+	font-weight: normal;
+	margin-top: 3px;
+}
+#videoRecommend .text {
+	float: left;
+	width: 132px;
+	margin: 5px 10px;
+	margin-left: 0;
+	_margin-right: 5px;
+	color: #666666;
+	overflow: hidden;
+}
+#videoList {
+	float: left;
+}
+#videoList .subtitle {
+	*width: 230px;		/* For Fucking IE */
+}
+/*	==================================================================
+		End Video
+	==================================================================*/
+/*	==================================================================
+		iDV
+	==================================================================*/
+#idvLeft {
+	margin: 10px;
+	float: left;
+	_margin: 5px;
+	width: 200px;
+	line-height: 24px;
+	text-align: center;
+}
+#idvLeft img {
+	width: 187px;
+	height: 140px;
+	border: #DDD 4px solid;
+}
+#idvRight {
+	float: left;
+	width: 364px;
+	margin: 10px;
+	_margin: 5px;
+}
+.idv_update {
+	width: 128px;
+	margin: 0 27px;
+	line-height: 24px;
+	text-align: center;
+	float: left;
+	margin: 0 _13.5px;
+}
+.idv_update img {
+	width: 120px;
+	height: 90px;
+	border: #DDD 4px solid;
+}
+
+.idv_list {
+	float: left;
+	clear: both;
+	list-style: square;
+	padding-left: 4px;
+	width: 328px;
+	margin: 10px 0;
+}
+.idv_list li {
+	float: left;
+	width: 140px;
+	margin-left: 24px;
+	_margin-left: 12px;
+}
+/*	==================================================================
+		End iDV
+	==================================================================*/
+	
+#game {
+	width: 260px;
+	height: 303px;
+	margin-left:25px;
+	margin-top: 20px;
+	box-shadow: 0 0 10px 10px #000;
+	-webkit-box-shadow: 0 0 10px 10px #000;
+	-moz-box-shadow: 0 0 10px 10px #000;
+}
+/*	==================================================================
+		Lab
+	==================================================================*/
+#lab {
+	margin-left: 30px;
+	_margin-left: 15px;
+	height: 160px;
+	width: 200px;
+	list-style: none;
+	float:left;
+	clear:both;
+	text-shadow: 0px 0px 3px #999;
+	font-weight: bold;
+	overflow: hidden;
+}
+#lab a {
+	display: block;
+	width: 200px;
+	height: 70px;
+	background:url(../images/lab_buttons.jpg) no-repeat;
+	margin: 5px 0;
+}
+#lab a:hover {
+	background-position-x: -200px;
+}
+/*	==================================================================
+		End Lab
+	==================================================================*/
+/*	==================================================================
+		Column
+	==================================================================*/
+#column {
+	clear: both;
+	margin-top: 20px;
+	width: 960px;
+	height: 500px;
+}
+
+#column_top {
+	width:960px;
+	height: 31px;
+	background: url(../images/column_top.jpg);
+}
+
+#column_left {
+	width: 300px;
+	height: 520px;
+	background-image: url(../images/back.jpg);
+	float: left;
+}
+
+#column_right {
+	width: 660px;
+	height: 520px;
+	float: left;
+	position:relative;
+}
+
+#column_tri {
+	position: absolute;
+	left: -2px;
+	top: 0;
+	z-index:10;
+	background: url(../images/column_tri.png);
+	width: 100px;
+	height: 100px;
+}
+
+#column .title {
+	*width: 200px;		/* For Fucking IE */
+}
+/* Menu */
+#menu {
+	list-style: none;
+	margin-top: 108px;
+	font-size: 16px;
+}
+#menu li {
+	text-align: center;
+	cursor: pointer;
+	display: block;
+	height: 24px;
+	width: 300px;
+	padding: 18px 0;
+	line-height: 24px;
+	text-shadow: white 1px 1px 0;
+	_border-bottom: #888 1px solid;
+}
+#menu li + li {
+	border-top: #888 1px solid;
+}
+#column .tab1 {
+	background: #CCC;	
+	-webkit-box-shadow: inset -15px 0 30px -15px #333;
+	-moz-box-shadow: inset -15px 0 30px -15px #333;
+	box-shadow: inset -15px 0 30px -15px #333;
+}
+#column .tab2 {
+	-webkit-box-shadow: 0px 0px 0px;
+	-moz-box-shadow: 0px 0px 0px;
+	box-shadow: 0px 0px 0px;
+	background: #FFF;
+	color: #F60;
+}
+#column .tab3 {
+	background: #CCC;	
+	-webkit-box-shadow: inset -15px 10px 30px -15px #333;
+	-moz-box-shadow: inset -15px 10px 30px -15px #333;
+	box-shadow: inset -15px 10px 30px -15px #333;
+}
+#column .tab4 {
+	background: #CCC;	
+	-webkit-box-shadow: inset -15px -10px 30px -15px #333;
+	-moz-box-shadow: inset -15px -10px 30px -15px #333;
+	box-shadow: inset -15px -10px 30px -15px #333;
+}
+
+#column .icon1, #column .icon2, #column .icon3, #column .icon4, #column .icon5 {
+	display:inline-block;
+	width: 24px;
+	height: 24px;
+	vertical-align: middle;
+	margin-right: 5px;
+}
+#column .icon1{background:url(../images/column_ico1-1.png);}
+#column .tab2 .icon1 {background:url(../images/column_ico1-2.png);}
+#column .icon2{background:url(../images/column_ico2-1.png);}
+#column .tab2 .icon2 {background:url(../images/column_ico2-2.png);}
+#column .icon3{background:url(../images/column_ico3-1.png);}
+#column .tab2 .icon3 {background:url(../images/column_ico3-2.png);}
+#column .icon4{background:url(../images/column_ico4-1.png);}
+#column .tab2 .icon4 {background:url(../images/column_ico4-2.png);}
+#column .icon5{background:url(../images/column_ico5-1.png);}
+#column .tab2 .icon5 {background:url(../images/column_ico5-2.png);}
+
+/* Recommend */
+#column .recommend {
+	background: url(../images/column_bg.jpg) repeat-x;
+	height: 240px;
+	width: 100%;
+	float: left;
+	border-bottom: 1px solid #CCC;
+}
+
+#column .recommend .picture {
+	margin-top: 20px;
+	margin-left: 30px;
+	_margin-left: 15px;
+	width: 180px;
+	height: 180px;
+	border: #DDD 4px solid;
+	float:left;
+}
+#column .recommend .article {
+	float: left;
+	width: 400px;
+	height: 195px;
+	margin-top: 20px;
+	margin-left: 10px;
+	_margin-left: 5px;
+	overflow: hidden;
+}
+#column .recommend .article h1 {
+	font-weight: normal;
+	font-size: 22px;
+	text-align: center;
+}
+#column .recommend .article a {
+	margin-right: 30px;
+	font-size: 14px;
+	float:right;
+	color: #F60;
+	font-weight: bold;
+}
+#column .recommend .time {
+	text-align: center;
+	line-height: 20px;
+	color: #999;
+	clear: both;
+}
+#column .recommend img {
+	vertical-align: middle;
+	margin-right: 5px;
+}
+/* List1 */
+.column_list1 {
+	list-style: none;
+	float: left;
+	clear: both;
+	margin: 10px;
+	_margin: 5px;
+}
+.column_list1 li {
+	clear: both;
+	*width: 246px;
+}
+.column_list1 .caption {
+	float: left;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	_margin-left: 5px;
+	height: 70px;
+	width: 140px;
+	overflow: hidden;
+}
+.column_list1 .content {
+	color: #666666;
+}
+.column_list1 .pic {
+	margin-bottom: 10px;
+	margin-left: 10px;	
+	_margin-left: 5px;
+	float: left;
+	padding: 2px;
+	border: #CCC 1px solid;
+}
+/* List2 */
+.column_list2 {
+	float:left;
+	margin: 10px;
+	list-style: none;
+
+}
+.column_list2 li {
+	margin:0 10px;
+	border-bottom: #bfbfbf 1px dashed;
+	width: 200px;
+	height: 20px;
+	line-height: 20px;
+	padding-left:10px;
+	overflow: hidden;
+}
+
+#column .title {
+	padding-left: 20px;
+	height: 30px;
+	line-height: 30px;
+	font: "微软雅黑", "华文细黑", "幼圆", "宋体";
+	font-size: 14px;
+	color: #666;
+	border-bottom: 1px solid #CCC;
+	margin-bottom: 10px;
+}
+#column .title img {
+	padding-right: 5px;
+	vertical-align: middle;
+}
+
+#column > .pic {
+	float: left;
+}
+/* Category */
+#column .category {
+	list-style: none;
+	height: 30px;
+	width: 100%;
+	background: url(../images/column_ctgr2.png) repeat-x;
+	clear:both;
+}
+#column .category img {
+	float: left;
+}
+#column .category li {
+	float: left;
+	
+}
+#column .category li a{
+	display: block;
+	text-align: center;
+	height: 26px;
+	width: 80px;
+	float: left;
+	margin-left: 10px;
+	_margin-left: 5px;
+	margin-top: 2px;
+	font-size: 14px;
+	line-height: 26px;
+	color: #FFF;
+}
+#column .category li a:link,#column .category li a:visited{
+	background: #F60;
+}
+#column .category li a:hover {
+	background: #F90;
+}
+/*	==================================================================
+		End Column
+	==================================================================*/
+#links a {
+	padding: 0 3px;
+}
+#links a + a {
+	border-left: 1px #444 solid;
+}
+
+
+#about .picture {
+	width: 310px;
+	margin: 20px 10px;
+	float: left;
+	_margin: 10px 0px;
+}
+#about .text {
+	float: left;
+	margin-top: 20px;
+	width: 248px;
+}
+
+#left1 {
+	width: 650px;
+	float: left;
+	
+}
+#right1 {
+	width: 310px;
+	float: left;
+}
+#left2 {
+	*padding-top: 50px;
+	_padding-top: 0;
+	clear: both;
+	width: 336px;
+	float: left;
+}
+#right2 {
+	*padding-top: 50px;
+	_padding-top: 0;
+	width: 634px;
+	_width: 620px;
+	float: left;
+	margin-left: -10px;
+	_margin-left: -5px;
+}
+
+/*	==================================================================
+		End Container
+	==================================================================*/
+/*	==================================================================
+		Footer
+	==================================================================*/
+#footer {
+	clear: both;
+	background: #2B93CE;
+	background-repeat: repeat-x;
+	border-top: #dedede 4px solid;
+	height: 50px;
+	color: #FFF;
+	line-height: 20px;
+	text-align: center;
+}
+
+#footer a {
+	color:#FFF;
+}
+#footer a:hover {
+	color:#e7e7e7;
+}
+#footer .content {
+	width: 960px;
+	margin:0 auto;
+}
+
+#footer .text {
+	clear: both;
+	padding-top:10px;
+}
+#footer ul {
+	list-style: none;
+	padding-right:80px;
+	float: right;
+}
+#footer ul li {
+	padding:0 14px;
+	float: left;
+}
+#footer ul li + li {
+	border-left: white 1px solid;
+}
+/*	==================================================================
+		End Footer
+	==================================================================*/
+/*	==================================================================
+		Others
+	==================================================================*/
+.more {
+	margin-top: 12px;
+	margin-right: 40px;
+	_margin-right: 20px;
+	float: right;
+}
+.more2 {
+	margin-top: 12px;
+	float: right;
+}
+
+
+/* ~~ 其它浮动/清除类 ~~ */
+.fltrt {  /* 此类可用于在页面中使元素向右浮动。浮动元素必须位于其在页面上的相邻元素之前。 */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* 此类可用于在页面中使元素向左浮动。浮动元素必须位于其在页面上的相邻元素之前。 */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* 如果从 .container 中删除了 overflow:hidden，则可以将此类放置在 <br /> 或空 div 中，作为 #container 内最后一个浮动 div 之后的最终元素 */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+.clearboth {clear:both;}
+.bordernone {
+	border: none;
+}
+
+.space {
+	clear: both;
+	height: 20px;
+	width: 100%;
+}
+/*	==================================================================
+		End Others
+	==================================================================*/
+	
+	
+	
+	
+/*增加于2015年4月23日 用于运动会海报展示*/
+#mos-mask{
+	opacity:0.8;
+	height:1680px;
+	background-color:#000;
+	z-index:1000;
+	display:block;
+	position:absolute;
+	left:0;
+	top:0;
+}
+#mos-alert-img{
+	width:500px;
+	z-index:1001;
+	display:block;
+	position:absolute;
+}
+body{
+	overflow-x:hidden;
+}

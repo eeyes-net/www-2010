@@ -1,0 +1,681 @@
+<include file="Public:header" />
+<!--运动会海报弹出效果 增加于2015年4月23日 css为对应的style.css目录末尾处 js均在下方-->
+<a target="_blank" href="http://2015.eeyes.net/">
+    <img id="mos-alert-img" src="__PUBLIC__/images/alert.png" alt="第53届运动会宣传海报" />
+</a>
+<div id="mos-mask"></div>
+<script type="text/javascript">
+    var mosH = $(window).height();
+    var mosW = $(window).width();
+    var $mosMask = $("#mos-mask");
+    var $mosImg = $("#mos-alert-img");
+    $mosMask.css({
+        width: mosW + "px"
+    });
+    $mosImg.css({
+        left: (mosW - 500) / 2,
+        top: (mosH - 353.5) / 2
+    });
+    $mosMask.click(function () {
+        $mosImg.fadeOut();
+        $mosMask.fadeOut();
+    });
+</script>
+<!--运动会海报弹出效果结束-->
+
+<!-- 页面主体开始 -->
+<div id="content">
+    <!--主体上方可折叠banner开始-->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".trigger").click(function () {
+                $(".panel").slideUp(1700);
+            });
+        });
+    </script>
+    <style>
+        div.panel {
+            margin-top: 5px;
+            margin-bottom: -5px;
+            padding: 0;
+            height: 178px;
+            width: 950px;
+            border: solid 1px #c3c3c3;
+        }
+    </style>
+    <div class="panel" style="background: url(__PUBLIC__/images/focus/focus_moon.jpg);">
+        <img class="trigger" src="__PUBLIC__/images/focus/cancel.png" style="margin-top: 115px; margin-left: 870px;" />
+    </div>
+    <!--主体上方可折叠banner结束-->
+
+    <!--主体左栏开始-->
+    <div id="left1">
+        <!--交大知道向上翻动横条开始-->
+        <div id="knows">
+            <img src="__PUBLIC__/images/knows_ico.png" class="icon" alt="交大知道" /> <span style="font-weight: bold;">交大知道，期待你的回答： </span>
+            <span style="float: right; width: 440px; height: 25px; font-size: 12px;">
+                    <ul id="scrollMe">
+                        <volist name="eKnowList" id="eKnowList">
+                            <li><a href="http://zhidao.eeyes.net/question/{$eKnowList.question_id}.html">{$eKnowList.question_content}</a></li>
+                        </volist>
+                    </ul>
+                    <script type="text/javascript">
+                        new srcMarquee("scrollMe", 0, 1, 290, 20, 30, 3000, 3000, 25);
+                    </script>
+                </span>
+        </div>
+        <!--交大知道向上翻动横条结束-->
+
+        <!--e瞳网最新更新开始-->
+        <div class="graybox clearboth" id="news">
+            <div class="left_border"></div>
+            <div class="middle">
+                <ul class="nav">
+                    <img class="icon" src="__PUBLIC__/images/graybox_ico2.png" alt="e瞳关注logo" />
+                    <li><a href="#" title="e瞳关注" class="navtab">e瞳关注</a></li>
+                    <li><a href="#" title="校园新闻" class="navtab">校园新闻</a></li>
+                    <li><a href="#" title="异同争鸣" class="navtab">异同争鸣</a></li>
+                    <li><a href="#" title="人物专访" class="navtab">人物专访</a></li>
+                    <li><a href="#" title="博客天下" class="navtab">博客天下</a></li>
+                </ul>
+                <div class="content">
+                    <div class="photos">
+                        <div class="slides_container">
+                            <volist name="ePicList1" id="ePicList">
+                                <div>
+                                    <a href="{$ePicList.url}"><img style="width:240px;height:180px;" src="{$ePicList.thumb}"></a>
+                                </div>
+                            </volist>
+                        </div>
+                    </div>
+                    <ul class="list" style="width: 324px;">
+                        <volist name="eFocuslist" id="eFocuslist">
+                            <li><a href="{$eFocuslist.url}">{$eFocuslist.title}</a><span class="time"></span></li>
+                        </volist>
+                    </ul>
+                </div>
+                <div class="content">
+                    <div class="photos">
+                        <div class="slides_container">
+                            <volist name="ePicList2" id="ePicList">
+                                <div>
+                                    <a href="{$ePicList.url}"><img style="width:240px;height:180px;" src="{$ePicList.thumb}"></a>
+                                </div>
+                            </volist>
+                        </div>
+                    </div>
+                    <ul class="list" style="width: 324px;">
+                        <volist name="eTrivialist" id="eTrivialist">
+                            <li><a href="{$eTrivialist.url}">{$eTrivialist.title}</a><span class="time"></span></li>
+                        </volist>
+                    </ul>
+                </div>
+                <div class="content">
+                    <div class="photos">
+                        <div class="slides_container">
+                            <volist name="ePicList3" id="ePicList">
+                                <div>
+                                    <a href="{$ePicList.url}"><img style="width:240px;height:180px;" src="{$ePicList.thumb}"></a>
+                                </div>
+                            </volist>
+                        </div>
+                    </div>
+                    <ul class="list" style="width: 324px;">
+                        <volist name="eInterviewlist" id="eInterviewlist">
+                            <li><a href="{$eInterviewlist.url}">{$eInterviewlist.title}</a><span class="time"></span></li>
+                        </volist>
+                    </ul>
+                </div>
+                <div class="content">
+                    <div class="photos">
+                        <div class="slides_container">
+                            <volist name="ePicList4" id="ePicList">
+                                <div>
+                                    <a href="{$ePicList.url}"><img style="width:240px;height:180px;" src="{$ePicList.thumb}"></a>
+                                </div>
+                            </volist>
+                        </div>
+                    </div>
+                    <ul class="list" style="width: 324px;">
+                        <volist name="eVisitList" id="eVisitList">
+                            <li><a href="{$eVisitList.url}">{$eVisitList.title}</a><span class="time"></span></li>
+                        </volist>
+                    </ul>
+                </div>
+                <div class="content">
+                    <div class="photos">
+                        <div class="slides_container">
+                            <volist name="ePicList5" id="ePicList">
+                                <div>
+                                    <a href="{$ePicList.url}"><img style="width:240px;height:180px;" src="{$ePicList.thumb}"></a>
+                                </div>
+                            </volist>
+                        </div>
+                    </div>
+                    <ul class="list" style="width: 324px;">
+                        <volist name="eBlogList" id="eBlogList">
+                            <li><a href="{$eBlogList.url}">{$eBlogList.title}<span class="time"></span></a></li>
+                        </volist>
+                    </ul>
+                </div>
+            </div>
+            <div class="right_border"></div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#news .photos').slides({
+                    preload: true,
+                    preloadImage: '__PUBLIC__/images/loading.gif',
+                    play: 3000,
+                    pause: 2000,
+                    hoverPause: true
+                });
+            });
+        </script>
+        <!--e瞳网最新更新结束-->
+
+        <!--爱影视最新更新开始-->
+        <div class="graybox" id="video">
+            <div class="left_border"></div>
+            <div class="middle" style="width: 599px;">
+                <ul class="nav">
+                    <img class="icon" src="__PUBLIC__/images/graybox_ico3.png" alt="爱影视logo" />
+                    <li><a href="http://idv.eeyes.net/" title="爱影视" class="navtab">爱影视</a></li>
+                    <li><a href="#" title="" class="navtab">iDV</a></li>
+                </ul>
+                <div class="content" style="height: 215px;">
+                    <div id="videoRecommend">
+                        <volist name="eLovedvNewList" id="list">
+                            <a href="http://idv.eeyes.net/play.php?id={$list.id}"><img src="http://idv.eeyes.net/pic/pic{$list.id}.jpg" alt="视频" onerror="$('#videoRecommend a img').attr('src','__PUBLIC__/images/iDV.jpg');" /></a>
+                            <div class="text">
+                                <a href="http://idv.eeyes.net/play.php?id={$list.id}">
+                                    <h3>{$list.title}</h3>
+                                </a>{$list.introduction}
+                            </div>
+                        </volist>
+                    </div>
+                    <img class="vline" src="__PUBLIC__/images/vline.png" />
+                    <div id="videoList">
+                        <div class="subtitle"><img src="__PUBLIC__/images/gallery_next.gif" />爱影视最新关注</div>
+                        <ul class="list" style="width: 272px;">
+                            <volist name="eLovedvFocusList" id="list">
+                                <li style="*width:272px;_width:242px;"><a href="http://idv.eeyes.net/play.php?id={$list.id}">{$list.title}</a><span class="time" style="display:none">{$list.score|substr=0,6}</span></li>
+                            </volist>
+                        </ul>
+                    </div>
+                </div>
+                <div class="content" style="height: 215px;">
+                    <a id="idvLeft" href="#"><img src="__PUBLIC__/images/video01.jpg" alt="视频" />校运会视频</a>
+                    <div id="idvRight">
+                        <a class="idv_update" href="#"><img src="__PUBLIC__/images/video02.jpg" alt="视频" />校运会校运会</a>
+                        <a class="idv_update" href="#"><img src="__PUBLIC__/images/video03.jpg" alt="视频" />校运会视</a>
+                        <ul class="idv_list">
+                            <li><a href="#">校运会视频</a></li>
+                            <li><a href="#">交大之星</a></li>
+                            <li><a href="#">最佳团日交大之星</a></li>
+                            <li><a href="#">交大之交大之星星</a></li>
+                            <li><a href="#">交大之星</a></li>
+                            <li><a href="#">交大之星</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="right_border"></div>
+        </div>
+        <!--爱影视最新更新结束-->
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#news .content').hide();
+            $('#news .content').first().show();
+            $('#news .navtab').first().addClass('chosen');
+        });
+        $('#news .navtab').each(function (i) {
+            $(this).mouseover(function () {
+                $('#news .navtab').removeClass('chosen');
+                $($('#news .navtab')[i]).addClass('chosen');
+                $('#news .content').hide();
+                $($('#news .content')[i]).show();
+            });
+        });
+        $(document).ready(function () {
+            $('#video .content').hide();
+            $('#video .content').first().show();
+            $('#video .navtab').first().addClass('chosen');
+        });
+        $('#video .navtab').each(function (i) {
+            $(this).mouseover(function () {
+                $('#video .navtab').removeClass('chosen');
+                $($('#video .navtab')[i]).addClass('chosen');
+                $('#video .content').hide();
+                $($('#video .content')[i]).show();
+            });
+        });
+    </script>
+    <!--主体左栏结束-->
+
+    <!--主体右栏开始-->
+    <div id="right1">
+        <!--右侧滚动图片宣传栏开始-->
+        <div class="focusPic" id="slider">
+            <div class="arrow_up"></div>
+            <ul class="bigpic">
+                <li><a href="http://2015.eeyes.net/" title="第52届校运会官网" target="_blank"><img src="__PUBLIC__/images/focus/sportmeeting1.jpg" alt="校运会官网" /></a></li>
+                <li><a href="http://kechenggezi.com/" title="课程格子：五秒钟创建专属课程表" target="_blank"><img src="__PUBLIC__/images/focus/focus_kechengbiao.jpg" alt="课程格子" /></a></li>
+                <li><a href="#"><img src="__PUBLIC__/images/shiyanshi.jpg" alt="网络安全实验室" /></a></li>
+                <li><a href="http://zhidao.eeyes.net/" title="交大知道，谁用谁知道！" target="_blank"><img src="__PUBLIC__/images/focus/focus_xjtuknow.jpg" alt="交大知道" /></a></li>
+                <li><a href="http://upan.eeyes.net/" title="易盘上线：上传文件凭提取码下载，从此扔掉U盘！" target="_blank"><img src="__PUBLIC__/images/focus/focus_upan.jpg" alt="易盘" /></a></li>
+                <li><a href="http://music.eeyes.net/" title="悦听乐酷——音乐网络电台" target="_blank"><img src="__PUBLIC__/images/focus/focus_music.jpg" alt="悦听乐酷" /></a></li>
+            </ul>
+            <ul class="smallpic">
+                <li><a href="http://2014.eeyes.net/" title="第53届校运会官网" target="_blank"><img src="__PUBLIC__/images/focus/sportmeeting1.jpg" alt="校运会官网" /></a></li>
+                <li><a href="http://kechenggezi.com/" title="课程格子：五秒钟创建专属课程表" target="_blank"><img src="__PUBLIC__/images/focus/focus_kechengbiao.jpg" alt="课程格子" /></a></li>
+                <li><a href="#"><img src="__PUBLIC__/images/shiyanshi.jpg" alt="网络安全实验室" /></a></li>
+                <li><a href="http://zhidao.eeyes.net/" title="交大知道，谁用谁知道！" target="_blank"><img src="__PUBLIC__/images/focus/focus_xjtuknow.jpg" alt="交大知道" /></a></li>
+                <li><a href="http://upan.eeyes.net/" title="易盘上线：上传文件凭提取码下载，从此扔掉U盘！" target="_blank"><img src="__PUBLIC__/images/focus/focus_upan.jpg" alt="易盘" /></a></li>
+                <li><a href="http://music.eeyes.net/" title="悦听乐酷——音乐网络电台" target="_blank"><img src="__PUBLIC__/images/focus/focus_music.jpg" alt="悦听乐酷" /></a></li>
+            </ul>
+        </div>
+        <script type="text/javascript">
+            (function ($) {
+                var delay = 3000,
+                    index = 0,
+                    $slider = $('#slider'),
+                    run_slider = function (index, no_loop) {
+                        if (time_id) {
+                            clearTimeout(time_id);
+                        }
+                        var $selected = $('.smallpic li.selected', $slider);
+                        if (arguments.length == 0) {
+                            index = parseInt($selected.next('li').attr('data-index'), 10);
+                            index = isNaN(index) ? 0 : index;
+                        }
+                        if ($selected.attr('data-index') != index) {
+                            if (index > 5 || index < 0) {
+                                index = 0;
+                            }
+                            var top = index * 58 + 58 / 2 - 7;
+                            $('.arrow_up', $slider).stop().animate({
+                                top: (top < 0) ? 0 : top
+                            }, {
+                                duration: 300
+                            });
+                            $('.smallpic li', $slider).removeClass('selected').eq(index).addClass('selected');
+                            $('.bigpic li', $slider).hide().css('z-index', '1').eq(index).hide().css('z-index', '10').show().find('img').fadeTo(0, 0).fadeTo(300, 1)
+                        }
+                        if (!no_loop) {
+                            time_id = setTimeout(run_slider, delay);
+                        }
+                    },
+                    time_id = setTimeout(run_slider, 10);
+                $(".smallpic li", $slider).each(function (index) {
+                    $(this).attr('data-index', index).mouseover(function () {
+                        run_slider($(this).attr('data-index'), true);
+                    }).mouseout(function () {
+                        time_id = setTimeout(run_slider, delay);
+                    });
+                });
+                $('.bigpic', $slider).mouseover(function () {
+                    if (time_id) {
+                        clearTimeout(time_id);
+                    }
+                }).mouseout(function () {
+                    time_id = setTimeout(run_slider, delay);
+                });
+            })($);
+        </script>
+        <!--右侧滚动图片宣传栏结束-->
+
+        <!--右侧最新公告栏开始-->
+        <div class="graybox">
+            <div class="left_border"></div>
+            <div class="middle" style="width: 249px;">
+                <div class="title"><img src="__PUBLIC__/images/graybox_ico1.png" alt="最新公告" /><span class="color1">最新公告</span> - NOTICE</div>
+                <ul class="list" style="width: 234px;">
+                    <volist name="eAnnList" id="list">
+                        <li><a href="http://news.eeyes.net/index.php?m=announce&c=index&a=show&aid={$list.aid}">{$list.title}<span class="time"></span></a></li>
+                    </volist>
+                </ul>
+            </div>
+            <div class="right_border"></div>
+        </div>
+        <!--右侧最新公告栏结束-->
+    </div>
+    <!--主体右栏结束-->
+
+    <!--页面实验项目开始-->
+    <div id="lab">
+        <a href="#" style="background-position-y:0;"></a>
+        <a href="#" style="background-position-y:-70px;"></a>
+    </div>
+    <!--
+    <ul class="lab">
+        <li><a href="#">我的百科</a></li>
+        <li><a href="#">交大知道</a></li>
+        <li><a href="#">失物招领</a></li>
+        <li><a href="#">爱文库</a></li>
+        <li><a href="#">起航交大</a></li>
+        <li><a href="#">网上订票</a></li>
+    </ul>
+    <script type="text/javascript">
+        var sizes = ["12", "14", "16", "18", "20", "22"];
+        var colors = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"];
+        $(document).ready(function () {
+            $('.lab li').each(function () {
+                $(this).children().css({
+                    color: "#" + colors[parseInt(Math.random() * colors.length)] + colors[parseInt(Math.random() * colors.length)] + colors[parseInt(Math.random() * colors.length)],
+                    fontSize: parseInt(sizes[parseInt(Math.random() * sizes.length)])
+                });
+            });
+        });
+    </script>
+    -->
+    <!--页面实验项目结束-->
+
+    <!--页面中部横向滚动banner开始-->
+    <div id="topic">
+        <img src="__PUBLIC__/images/new-ribbon.png" width="112" height="112" id="ribbon" />
+        <div id="slides">
+            <div class="slides_container">
+                <div>
+                    <a href="http://zhidao.eeyes.net/" title="交大知道这样“玩”儿，你还在犹豫吗？">
+                        <img src="__PUBLIC__/images/focus/topic_pinge.jpg" style="width: 600px;" alt="交大知道" />
+                    </a>
+                    <div class="caption">交大知道这样“玩”儿，你还在犹豫吗？</div>
+                </div>
+                <div>
+                    <a href="http://www.eeyes.net/pan/" title="易盘上线：上传文件后凭提取码随时随地下载，从此扔掉U盘！">
+                        <img src="__PUBLIC__/images/focus/topic_pan.jpg" style="margin-left: -20px; width: 640px;" alt="易盘" />
+                    </a>
+                    <div class="caption">易盘上线：上传文件后凭提取码随时随地下载，从此扔掉U盘！</div>
+                </div>
+                <div>
+                    <a href="http://zhidao.eeyes.net/" title="交大知道，谁用谁知道！">
+                        <img src="__PUBLIC__/images/focus/topic_xjtuknow.jpg" style="margin-left: -20px; width: 640px;" alt="交大知道" />
+                    </a>
+                    <div class="caption">交大知道，谁用谁知道！</div>
+                </div>
+                <div>
+                    <a href="http://2012.eeyes.net" title="第51届校运会官方网站">
+                        <img src="__PUBLIC__/images/focus/topic_2012.jpg" style="margin-left: -20px; width: 640px;" alt="校运会官方网站" />
+                    </a>
+                    <div class="caption">第51届校运会官方网站</div>
+                </div>
+            </div>
+            <a href="#" class="prev"><img src="__PUBLIC__/images/arrow-prev.png" alt="上一个" /></a>
+            <a href="#" class="next"><img src="__PUBLIC__/images/arrow-next.png" alt="下一个" /></a>
+        </div>
+        <img src="__PUBLIC__/images/frame.png" id="frame" alt="图片框" />
+        <script type="text/javascript">
+            $(function () {
+                $('#slides').slides({
+                    preload: true,
+                    preloadImage: '__PUBLIC__/images/loading.gif',
+                    play: 2500,
+                    pause: 5000,
+                    hoverPause: true,
+                    animationStart: function () {
+                        $('.caption').animate({
+                            bottom: -24
+                        }, 100);
+                    },
+                    animationComplete: function (current) {
+                        $('.caption').animate({
+                            bottom: 0
+                        }, 200);
+                    }
+                });
+            });
+        </script>
+    </div>
+    <!--页面中部横向滚动banner结束-->
+
+    <!--e瞳栏目展示开始-->
+    <div id="column">
+        <div id="column_top"></div>
+        <!--左侧导航栏选项卡开始-->
+        <div id="column_left">
+            <ul id="menu">
+                <li href="#tab-music"><span class="icon1"></span><span>悦听乐酷</span></li>
+                <li href="#tab-idv"><span class="icon3"></span><span>爱影视</span></li>
+                <li href="#tab-news"><span class="icon2"></span><span>e瞳新闻</span></li>
+                <li href="#tab-know"><span class="icon4"></span><span>交大知道</span></li>
+                <li href="#tab-xjtu"><span class="icon5"></span><span>起航交大</span></li>
+            </ul>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $('#menu').children().addClass('tab1');
+                    $('#menu').children().first().addClass('tab2');
+                    $('#menu').children().first().next().addClass('tab3');
+                    $('#menu li').tabs();
+                    $('.tab_content').hide();
+                    //$('#tab-music').load();
+                    $.getJSON('http://music.eeyes.net/music2011/index.php?route=ajax/index&callback=?', function (json) {
+                        $('.tab_content:first').html(json.root).show();
+                    });
+                });
+                $.fn.tabs = function () {
+                    var selector = this;
+                    this.each(function () {
+                        var obj = $(this);
+                        $(obj.attr('href')).hide();
+                        $(obj).click(function () {
+                            $(selector).each(function (i, element) {
+                                $(element).removeClass();
+                                $(element).addClass('tab1');
+                                $($(element).attr('href')).hide();
+                            });
+                            $(selector).removeClass('tab2');
+                            $(this).removeClass();
+                            $(this).addClass('tab2');
+                            $(this).prev().removeClass();
+                            $(this).prev().addClass('tab4');
+                            $(this).next().removeClass();
+                            $(this).next().addClass('tab3');
+                            $($(this).attr('href')).fadeIn();
+                            return false;
+                        });
+                    });
+                    $(this).show();
+                    $(this).first().click();
+                };
+            </script>
+        </div>
+        <!--左侧导航栏选项卡结束-->
+        <!--栏目展示主体开始-->
+        <div id="column_right">
+            <!--悦听乐酷展示开始-->
+            <div id="tab-music" class="tab_content" style="display: inline-block;height:508px;">
+                hello
+            </div>
+            <!--悦听乐酷展示结束-->
+
+            <!--爱影视展示开始-->
+            <div id="tab-idv" class="tab_content">
+                <div id="column_tri"></div>
+                <div style="margin-left: 35px;">
+                    <div style="float: left;">
+                        <img src="__PUBLIC__/images/eeyesee1.jpg" />
+                        <h2 align="center">e瞳十周年站庆</h2>
+                    </div>
+                    <div style="float: left; margin-left: 20px;">
+                        <img src="__PUBLIC__/images/avanger.jpg" />
+                        <h2 align="center">复仇者联盟</h2>
+                    </div>
+                    <div id="videoList" style="line-height: 25px; width: 500px; background:url(__PUBLIC__/images/back.jpg) repeat; padding-left: 15px; border-radius: 5px; box-shadow: 0px 0px 10px 0px rgb(141, 141, 141);">
+                        <div class="subtitle">
+                            <img src="__PUBLIC__/images/gallery_next.gif">爱影视最新关注
+                        </div>
+                        <ul class="list" style="width: 272px;">
+                            <li style="*width:272px;_width:242px;"><a href="http://idv.eeyes.net/play.php?id=383">城市猎人</a></li>
+                            <li style="*width:272px;_width:242px;"><a href="http://idv.eeyes.net/play.php?id=343">西安交大2011樱花祭精彩集锦</a></li>
+                            <li style="*width:272px;_width:242px;"><a href="http://idv.eeyes.net/play.php?id=493">生活大爆炸 The Big Bang Theory (第5季)</a></li>
+                            <li style="*width:272px;_width:242px;"><a href="http://idv.eeyes.net/play.php?id=351">英雄 Heroes (第3季)</a></li>
+                            <li style="*width:272px;_width:242px;"><a href="http://idv.eeyes.net/play.php?id=346">英雄 Heroes (第2季)</a></li>
+                            <li style="*width:272px;_width:242px;"><a href="http://idv.eeyes.net/play.php?id=352">英雄 Heroes (第4季)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--爱影视展示结束-->
+
+            <!--e瞳新闻展示开始-->
+            <div id="tab-news" class="tab_content">
+                <div id="column_tri"></div>
+                <div style="width:500px;margin:0 auto;">
+                    <ul>
+                        <li>
+                            <section>
+                                <h4><a href="http://news.eeyes.net/index.php?m=content&c=index&a=show&catid=6&id=1008" target="_blank" title="新加坡国立大学应用经济系宣讲会在我校举行">新加坡国立大学应用经济系宣讲会在我校举行</a></h4>
+                                <p>　　2013年11月5日下午,由启德书院团工委学生会承办的新加坡国立大学应用经济系宣讲会在西安交通大学（西区）国际会议厅举行...</p>
+                            </section>
+                        </li>
+                        <li>
+                            <section>
+                                <h4><a href="http://news.eeyes.net/index.php?m=content&c=index&a=show&catid=6&id=1007" target="_blank" title="女排秋季联赛半决赛 启德女排2：0击败宗濂女排">女排秋季联赛半决赛 启德女排2：0击败宗濂女排</a></h4>
+                                <p>　　11月5日中午，女排秋季联赛半决赛在生活区排球场准时打响。比赛双方是启德女排与宗濂女排，最终启德以2:0的比分胜宗濂。...</p>
+                            </section>
+                        </li>
+                        <li>
+                            <section>
+                                <h4><a href="http://news.eeyes.net/index.php?m=content&c=index&a=show&catid=6&id=1006" target="_blank" title="启德足球胜仲英 迈进决赛">启德足球胜仲英 迈进决赛</a></h4>
+                                <p>　　2013年11月4日中午，新生杯足球半决赛启德对战仲英，最终启德以2：0的比分战胜仲英。比赛前，启德足球队的队员们满怀信心...</p>
+                            </section>
+                        </li>
+                        <li>
+                            <section>
+                                <h4><a href="http://news.eeyes.net/index.php?m=content&c=index&a=show&catid=6&id=1005" target="_blank" title="启德女排：过关斩将夺桂冠">启德女排：过关斩将夺桂冠</a></h4>
+                                <p>　　11月7日中午，西安交通大学女排秋季联赛冠军争夺赛在启德女排与彭康女排之间展开。最终，启德女排在不懈努力后以2：0战胜...</p>
+                            </section>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--e瞳新闻展示结束-->
+
+            <!--交大知道展示开始-->
+            <div id="tab-know" class="tab_content">
+                <div id="column_tri"></div>
+            </div>
+            <!--交大知道展示结束-->
+
+            <!--起航交大展示开始-->
+            <div id="tab-xjtu" class="tab_content">
+                <div id="column_tri"></div>
+            </div>
+            <!--起航交大展示结束-->
+        </div>
+        <!--栏目展示主体结束-->
+    </div>
+    <!--e瞳栏目展示结束-->
+
+    <!--附加部分左栏开始-->
+    <div id="left2">
+        <!--友情链接开始-->
+        <div class="graybox_mini">
+            <div class="left_border"></div>
+            <div class="middle">
+                <div class="title"><img src="__PUBLIC__/images/graybox_ico4.png" alt="友情链接" />友情链接 - LINKS</div>
+                <div class="content" id="links">
+                    <a href="http://www.xjtu.edu.cn" target="_new">西安交通大学</a>
+                    <a href="http://tuanwei.tiaozhan.com" target="_new">共青团西安交通大学委员会网站</a>
+                    <a href="http://bbs.xjtu.edu.cn" target="_new">思源BBS</a><a href="http://pt.xjtuns.cn" target="_new">西交菩提</a>
+                    <a href="http://www.lib.xjtu.edu.cn" target="_new">钱学森图书馆</a><a href="http://dean.xjtu.edu.cn" target="_new">教务处</a>
+                    <a href="http://xsc.xjtu.edu.cn" target="_new">学生处</a>
+                    <a href="http://202.117.1.11" target="_new">小浣熊</a>
+                    <a href="http://202.117.1.14" target="_new">蓝莲花</a>
+                    <a href="http://www.tiaozhan.com" target="_new">挑战网</a>
+                    <a href="http://www.xjtu.edu.cn" target="_new">数学建模</a>
+                </div>
+            </div>
+            <div class="right_border"></div>
+        </div>
+        <!--友情链接结束-->
+
+        <!--联系我们开始-->
+        <div class="graybox_mini">
+            <div class="left_border"></div>
+            <div class="middle">
+                <div class="title"><img src="__PUBLIC__/images/graybox_ico5.png" alt="联系我们" />联系我们 - CONTACT</div>
+                <div class="content">
+                    <li>人人主页: <a href="http://page.renren.com/600964615/" title="人人主页">西安交通大学e瞳网</a></li>
+                    <li>新浪微博: <a href="http://weibo.com/u/2148674920" title="新浪微博">@西安交通大学e瞳网</a></li>
+                    <li>办公地址: 西安交通大学科技社团中心10号</li>
+                    <li>电子邮箱: <a href="mailto:eeyes2011@163.com">eeyes2011@163.com</a></li>
+                </div>
+            </div>
+            <div class="right_border"></div>
+        </div>
+        <!--联系我们结束-->
+    </div>
+    <!--附加部分左栏结束-->
+
+    <!--附加部分右栏开始-->
+    <div id="right2">
+        <!--关于我们开始-->
+        <div class="graybox" id="about">
+            <div class="left_border"></div>
+            <div class="middle" style="width: 578px;">
+                <ul class="nav">
+                    <img class="icon" src="__PUBLIC__/images/graybox_ico6.png" alt="关于我们" />
+                    <li><a href="http://blog.eeyes.net/?p=26" title="关于我们" class="navtab" target="_blank">关于我们</a></li>
+                    <li><a href="http://blog.eeyes.net" title="e瞳营" class="navtab" target="_blank">e瞳营</a></li>
+                    <li><a href="http://join.eeyes.net/" title="加入我们" class="navtab" target="_blank">加入我们</a></li>
+                </ul>
+                <div class="content">
+                    <img class="picture" src="__PUBLIC__/images/about_us.jpg" alt="成员合影" />
+                    <div class="text">
+                        <p>　　我们是e瞳网， 我们是交大学生自己的门户网站。</p>
+                        <p>　　e瞳网由新闻部，栏目部，技术部，DV部，市场部五大部门给力组成，为实现我们的梦想而奋斗,为交大网络文化建设的新明天而努力！我们的员工最具创业激情、创新精神、团队精神和上进心，从e瞳网走出去的eeyesers，走进了宝洁，麦肯锡，百度，腾讯，阿里巴巴，网易等知名公司，这里欢迎有志之士join us！</p>
+                        <p>　　精彩有e瞳，美妙无异同！！</p>
+                    </div>
+                </div>
+            </div>
+            <div class="right_border"></div>
+        </div>
+        <!--关于我们结束-->
+    </div>
+    <!--附加部分右栏结束-->
+
+    <div class="space"></div>
+</div>
+<!-- 页面主体结束 -->
+
+<!--页脚开始-->
+<div id="footer">
+    <div class="content">
+        <ul>
+            <li><a href="#" target="_blank">首页</a></li>
+            <li><a href="http://news.eeyes.net/" target="_blank">e瞳新闻</a></li>
+            <li><a href="http://idv.eeyes.net/" target="_blank">爱影视</a></li>
+            <li><a href="http://music.eeyes.net/" target="_blank">悦听乐酷</a></li>
+            <li><a href="http://zhidao.eeyes.net/" target="_blank">交大知道</a></li>
+            <li><a href="http://piao.eeyes.net/" target="_blank">在线订票</a></li>
+            <li><a href="http://upan.eeyes.net/" target="_blank">易云U盘</a></li>
+        </ul>
+        <div class="text">
+            © 2010-2015 e瞳网 eeYes .Net 版权所有 陕ICP备030061号
+            <!--注：此处使用的百度统计的代码之后的e瞳通用加载脚本中已包含-->
+            <!--
+            <script type="text/javascript">
+                var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+                document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4e38e33f8ac2d9137ff815656bf11e14' type='text/javascript'%3E%3C/script%3E"));
+            </script>
+            -->
+        </div>
+    </div>
+</div>
+<!--页脚结束-->
+
+<!--e瞳通用页眉页脚以及统计加载脚本开始-->
+<div style="display:none;">
+    <script src="http://www.eeyes.net/public/load.js"></script>
+    <script>
+        $(eeyesLoad("hide"));
+    </script>
+</div>
+<!--e瞳通用页眉页脚以及统计加载脚本结束-->
+
+</body>
+
+</html>
